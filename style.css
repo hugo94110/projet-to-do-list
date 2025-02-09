@@ -1,0 +1,964 @@
+/* DM SANS */
+/* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap'); */
+
+/* Poppins */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html, body {
+    background-color: #f0f0f0;
+    /* font-family: 'DM Sans', sans-serif; */
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+#toolbarContainer {
+    height: 80px;
+    margin: 0;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #d4d4d4;
+}
+
+#toolbarContainer a {
+    text-decoration: none;
+}
+
+#ButtonsContainer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
+}
+
+#title {
+    cursor: pointer;
+    font-size: 29px;
+}
+
+.blackText {
+    color: black;
+}
+
+.coloredText {
+    color: #007BFF;
+    transition: color 0.4s;
+}
+
+#emptyMessage {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+#emptyMessage p {
+    font-size: 19px;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+#listContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    /* max-width: 800px; */
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+#createListButton {
+    border-radius: 50%;
+    padding: 12px;
+    cursor: pointer;
+}
+
+#createListButton:hover {
+    background-color: #e0e0e0;
+}
+
+#filterButton {
+    border-radius: 50%;
+    padding: 12px;
+    cursor: pointer;
+}
+
+#filterButton:hover {
+    background-color: #e0e0e0;
+}
+
+#titlePrompt {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#titlePromptContainer {
+    text-align: left;
+    background-color: #fefefe;
+    border-radius: 15px;
+    padding: 20px;
+    width: 450px;
+}
+
+#titlePromptTitle {
+    font-size: 20px;
+    margin: 0;
+    text-align: left;
+}
+
+#titlePromptRule {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+    margin-top: 10px;
+    text-align: left;
+}
+
+#titlePromptInput {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #c7c7c7;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#titlePromptButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    margin-top: 8px;
+}
+
+#titlePromptSubmitButton {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    background-color: #007BFF;
+    border: 2px solid #007BFF;
+    color: white;
+    border-radius: 120px;
+    padding: 8px 6px;
+    width: 110px;
+    cursor: pointer;
+}
+
+#titlePromptSubmitButton:hover {
+    background-color: #0056b3;
+    border: 2px solid #0056b3;
+}
+
+#titlePromptCancelButton {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    background-color: #fefefe;
+    color: black;
+    border: 2px solid #c7c7c7;
+    border-radius: 120px;
+    padding: 8px 6px;
+    width: 110px;
+    cursor: pointer;
+}
+
+#titlePromptCancelButton:hover {
+    background-color: #ebebeb;
+    /* border: 3px solid #ebebeb; */
+}
+
+#taskPrompt {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#taskPromptContainer {
+    text-align: left;
+    background-color: #fefefe;
+    border-radius: 15px;
+    padding: 20px;
+    width: 450px;
+}
+
+#taskPromptTitle {
+    font-size: 20px;
+    margin: 0;
+    text-align: left;
+}
+
+#taskPromptRule {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+    margin-top: 10px;
+    text-align: left;
+}
+
+#taskTitlePromptInput {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 5px 0;
+    border: 2px solid #c7c7c7;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#taskDatePromptInput {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    border: 2px solid #c7c7c7;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#prioritySelect {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    border: 2px solid #c7c7c7;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styles de priorité */
+.priority-low {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f0f0f0;
+    background-color: #2ebd15;
+    font-size: 17px;
+    border-radius: 25px;
+    height: 35px;
+    width: 100px;
+}
+
+.priority-medium {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f0f0f0;
+    background-color: #f39c12;
+    font-size: 17px;
+    border-radius: 25px;
+    height: 35px;
+    width: 100px;
+}
+
+.priority-high {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f0f0f0;
+    background-color: #e74c3c;
+    font-size: 17px;
+    border-radius: 25px;
+    height: 35px;
+    width: 100px;
+}
+
+.priority-none {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7f8c8d;
+    background-color: #e0e0e0;
+    font-size: 17px;
+    border-radius: 25px;
+    height: 35px;
+    width: 100px;
+}
+
+#taskPromptButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    margin-top: 8px;
+}
+
+#taskPromptCancelButton {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    background-color: #fefefe;
+    color: black;
+    border: 2px solid #c7c7c7;
+    border-radius: 120px;
+    padding: 8px 6px;
+    width: 110px;
+    cursor: pointer;
+}
+
+#taskPromptCancelButton:hover {
+    background-color: #ebebeb;
+    /* border: 3px solid #ebebeb; */
+}
+
+#taskPromptSubmitButton {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    background-color: #007BFF;
+    border: 2px solid #007BFF;
+    color: white;
+    border-radius: 120px;
+    padding: 8px 6px;
+    width: 110px;
+    cursor: pointer;
+}
+
+#taskPromptSubmitButton:hover {
+    background-color: #0056b3;
+    border: 2px solid #0056b3;
+}
+
+.listTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 97%;
+}
+
+.createTaskButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    border: 2px solid #007BFF;
+    border-radius: 120px;
+    cursor: pointer;
+    width: fit-content;
+    margin-top: 12px;
+    margin-bottom: 9px;
+}
+
+.createTaskButton p {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: normal;
+}
+
+.createTaskButton:hover {
+    background-color: #0056b3;
+    border: 2px solid #0056b3;
+}
+
+.deleteListButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    margin: 0;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.deleteListButton:hover {
+    background-color: #0056b3;
+}
+
+.nested {
+    display: none;
+}
+
+.nested.active {
+    display: block;
+}
+
+#listContainer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Liste principale */
+li {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Div pour la tâche (titre de la liste) */
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 10px; */
+    /* border: 2px solid #d4d4d4; */
+    border-radius: 5px;
+    
+}
+
+.subtask {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+/* Bouton toggle */
+.toggle-subtask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0;
+    border-radius: 50%;
+    /* transition: transform 0.3s ease; */
+    margin-right: 6px;
+}
+
+.toggle-st-disabled {
+    opacity: 0.5;
+    cursor: default;
+    background-color: transparent;
+    transform: rotate(-180deg);
+}
+
+.toggle-subtask:not(.toggle-st-disabled):hover {
+    background-color: #e0e0e0;
+}
+
+.toggle-subtask svg {
+    fill: #666;
+}
+
+.toggle-subtask.caret-down svg {
+    transform: rotate(-180deg);
+}
+
+.add-subtask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin-left: 20px;
+}
+
+.add-subtask:hover {
+    background-color: #d4d4d4;
+}
+
+.add-subtask svg {
+    fill: #000000;
+}
+
+.delete-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin-left: 6px;
+}
+
+.delete-list:hover {
+    background-color: #d4d4d4;
+}
+
+.delete-list svg {
+    fill: #000000;
+}
+
+/* Le titre de la liste */
+.list-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    /* padding: 0 10px; */
+    font-weight: bold;
+    color: #000000;
+    font-size: 18px;
+}
+
+.nested {
+    display: none; /* Masquer par défaut les tâches */
+}
+
+.nested.active {
+    display: block;
+}
+
+.nested li {
+    margin-bottom: 5px;
+}
+
+.task div {
+    display: flex;
+    align-items: center;
+}
+
+.task-title {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 120px 100px 40px;
+    align-items: center;
+    gap: 45px;
+    padding-left: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #000000;
+    font-size: 18px;
+    border-bottom: 2px solid #d4d4d4;
+}
+
+.task-title > *:nth-child(1) {
+    margin-right: -35px;
+}
+
+.task-title > *:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #ccffcc; */
+}
+
+.task-title > *:nth-child(3) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    /* background-color: #ccccff; */
+}
+
+/* .task-title > *:nth-child(4) {
+    background-color: #ffffcc;
+} */
+
+.task-title p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Bouton du dropdown */
+.options-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    border: 2px solid #c7c7c7;
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.options-button:hover {
+    background-color: #d4d4d4;
+}
+
+/* Style du Dropdown */
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 87%;
+    left: auto;
+    right: 0px;
+    background-color: #f0f0f0;
+    border: 2px solid #d4d4d4;
+    border-radius: 8px;
+    list-style: none;
+    padding:0;
+    margin: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Style */
+.dropdown-item {
+    padding: 0;
+    margin: 0;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.dropdown-item:hover {
+    background-color: #d4d4d4;
+}
+
+#filtersContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0;
+    padding-top: 10px;
+}
+
+#completeTaskFilterButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 15px;
+    border-radius: 120px;
+    width: fit-content;
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+    color: #424242;
+    border: 2px solid #c7c7c7;
+    cursor: pointer;
+}
+
+#completeTaskFilterButton p {
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+}
+
+#completeTaskFilterButton:hover {
+    background-color: #e0e0e0;
+}
+
+#remainingTaskFilterButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 15px;
+    border-radius: 120px;
+    width: fit-content;
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+    color: #424242;
+    border: 2px solid #c7c7c7;
+    cursor: pointer;
+}
+
+#remainingTaskFilterButton p {
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+}
+
+#remainingTaskFilterButton:hover {
+    background-color: #e0e0e0;
+}
+
+/* Style quand le bouton est actif */
+#completeTaskFilterButton.active,
+#remainingTaskFilterButton.active {
+    border-color: #000000;
+}
+
+/* Code original : https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
+.container {
+    display: flex;
+    align-items: center; /* Centre verticalement les éléments */
+    position: relative;
+    padding-left: 41px;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 35px;
+}
+
+.text-cb-container {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+  
+.container input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+  
+.checkmark {
+    position: absolute;
+    top: auto;
+    left: 0;
+    height: 27px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+  
+.container .checkmark:hover {
+    background-color: #ccc;
+  }
+  
+.container input:checked ~ .checkmark {
+    background-color: #007BFF;
+}
+  
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+.container .checkmark:after {
+    left: 10px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Réduire la taille des textes et des colonnes en fonction du format de l'écran (mobile) */
+@media only screen and (max-width: 560px) {
+    .list-title {
+        font-size: 16px;
+    }
+    
+    .task-title {
+        grid-template-columns: 1fr 80px 60px 40px;
+        gap: 20px;
+        padding-left: 20px;
+        font-size: 16px;
+    }
+
+    .task-title > *:nth-child(1) {
+        margin-right: -10px;
+    }
+
+    .container {
+        font-size: 16px;
+    }
+    
+    .priority-low {
+        font-size: 14px;
+    }
+    
+    .priority-medium {
+        font-size: 14px;
+    }
+    
+    .priority-high {
+        font-size: 14px;
+    }
+    
+    .priority-none {
+        font-size: 14px;
+    }
+}
+
+/* Légende */
+/* #listLegend {
+    display: none;
+    grid-template-columns: 1fr 150px 100px 60px;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    // background-color: #e0e0e0;
+    border-radius: 8px; //
+    box-sizing: border-box;
+    width: 100%;
+    // border-bottom: 2px solid #d4d4d4; //
+}
+
+
+#listLegend p {
+    margin: 0;
+    // padding: 10px 15px; //
+    font-size: 15px;
+    color: #4d4d4d;
+} */
+
+#editTaskPrompt {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#editTaskPromptContainer {
+    text-align: left;
+    background-color: #fefefe;
+    border-radius: 15px;
+    padding: 20px;
+    width: 450px;
+}
+
+#editTaskPromptTitle {
+    font-size: 20px;
+    margin: 0;
+    text-align: left;
+}
+
+#editTaskPromptRule {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+    margin-top: 10px;
+    text-align: left;
+}
+
+#editTaskTitlePromptInput {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 5px 0;
+    border: 2px solid #c7c7c7;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#editTaskDatePromptInput {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    border: 2px solid #c7c7c7;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#editTaskPromptButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    margin-top: 8px;
+}
+
+#editPrioritySelect {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    border: 2px solid #c7c7c7;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#editTaskPromptCancelButton {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    background-color: #fefefe;
+    color: black;
+    border: 2px solid #c7c7c7;
+    border-radius: 120px;
+    padding: 8px 6px;
+    width: 110px;
+    cursor: pointer;
+}
+
+#editTaskPromptCancelButton:hover {
+    background-color: #ebebeb;
+}
+
+#editTaskPromptSubmitButton {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    background-color: #007BFF;
+    border: 2px solid #007BFF;
+    color: white;
+    border-radius: 120px;
+    padding: 8px 6px;
+    width: 110px;
+    cursor: pointer;
+}
+
+#editTaskPromptSubmitButton:hover {
+    background-color: #0056b3;
+    border: 2px solid #0056b3;
+}
